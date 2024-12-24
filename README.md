@@ -97,6 +97,11 @@ EX:
 測試資料的樣本數量可能有限。
 訓練集逐漸增大，可能影響計算效率。
 
+![Figure_Timecross01](https://github.com/user-attachments/assets/c129504e-ecfb-44a5-bf2a-42493084e50e)
+![Figure_Timecross02](https://github.com/user-attachments/assets/fe4bbb53-138d-496a-b148-45281aec648e)
+![Figure_Timecross03](https://github.com/user-attachments/assets/9c35299b-38c8-4a38-999a-17da7f42ed2c)
+![Figure_Timecross04](https://github.com/user-attachments/assets/d7838e0a-d2d4-40ad-bdc3-177533065dab)
+
 結論:由於關於股市價格預測除去上述的資料特徵外(收盤價,交易量,開盤價, 最低價, 最高價)，還具有許多不確定因素與更多資料(美股波動，新聞，各樣期刊，股市恐慌度.....等)需要加入進行訓練；因此時序 K-Fold驗證法的效益不彰。
 https://github.com/Jan-dai/First/blob/main/LSTM%20%E6%99%82%E5%BA%8F%E4%BA%A4%E5%8F%89(%E5%A4%B1%E6%95%97).py
 ---------------------------------------------------------------------------------
