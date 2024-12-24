@@ -68,6 +68,8 @@ EX:
 時序 K-Fold驗證法:
 一種特別設計用於時序資料的交叉驗證方法。與傳統的 K-Fold 不同，時序 K-Fold 的關鍵是考慮時間順序，確保訓練資料只包含過去的觀測值，而測試資料包含未來的觀測值，避免資料洩漏。
 
+![未命名](https://github.com/user-attachments/assets/4343be48-daea-4908-9cc0-ee8c9e256d9e)
+
 EX:
 
         import numpy as np
