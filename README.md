@@ -53,11 +53,36 @@ EX:
 訓練次數多：需要重複訓練 K 次，計算量大。不適合時序數據：會打亂數據的時間順序（對於時序數據需使用時序 K-Fold）。
 
 結論:
-由於資料形式與驗證法運行方式具有衝突的請況，因此改使用時序 K-Fold驗證法進行評估。
+由於資料形式與驗證法運行方式具有衝突的請況，因此改使用時序 K-Fold驗證法進行評估，並且只使用2個特徵資訊量不足因此改全使用(收盤價,交易量,開盤價, 最低價, 最高價)。
 -------------------------------------------------------------------
 # 3. :
 
-訓練測試，將全部標籤作為"特徵"。
+訓練測試，特徵使用改為全使用(收盤價,交易量,開盤價, 最低價, 最高價)。
+驗證法改使用時序 K-Fold驗證法進行評估。
+取消使用Keras Tuner進行超參數調整，並輸出最佳超參數調整數值，改為直接設定超參數。
 
-取消使用Keras Tuner進行超參數調整，並輸出最佳超參數調整數值。
-改為直接設定超參數。
+時序 K-Fold驗證法
+EX:
+        import numpy as np
+        from sklearn.model_selection import TimeSeriesSplit
+        # 假設有100筆時間序列資料
+        data = np.arange(100)
+        
+        # 使用 TimeSeriesSplit
+        n_splits = 5
+        tscv = TimeSeriesSplit(n_splits=n_splits)
+        
+        for fold, (train_index, test_index) in enumerate(tscv.split(data)):
+            print(f"Fold {fold+1}")
+            print("Train indices:", train_index)
+            print("Test indices:", test_index)
+
+優點:
+適合時序資料，能模擬實際預測場景。
+減少資料洩漏風險。
+缺點:
+測試資料的樣本數量可能有限。
+訓練集逐漸增大，可能影響計算效率。
+
+結論:
+---------------------------------------------------------------------------------
