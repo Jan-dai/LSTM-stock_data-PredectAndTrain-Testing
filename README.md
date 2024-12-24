@@ -63,6 +63,7 @@ EX:
 
 時序 K-Fold驗證法
 EX:
+
         import numpy as np
         from sklearn.model_selection import TimeSeriesSplit
         # 假設有100筆時間序列資料
@@ -80,6 +81,7 @@ EX:
 優點:
 適合時序資料，能模擬實際預測場景。
 減少資料洩漏風險。
+
 缺點:
 測試資料的樣本數量可能有限。
 訓練集逐漸增大，可能影響計算效率。
