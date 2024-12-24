@@ -12,11 +12,11 @@ K-Fold交叉驗證法:
 一種通用的交叉驗證技術，用於評估模型的性能。它將數據集分為 K 個相等的部分（folds），並多次訓練模型，每次使用一個部分作為測試集，其餘部分作為訓練集。
 
 EX:
+
         import numpy as np
         from sklearn.model_selection import KFold
         from sklearn.linear_model import LinearRegression
         from sklearn.metrics import mean_squared_error
-        
         # 假設數據
         X = np.arange(20).reshape(10, 2)  # 特徵數據
         y = np.arange(10)                # 標籤數據
